@@ -19,6 +19,14 @@
     "url": "https://github.com/drasekul/github_actions_exercise/issues"
   },
   "homepage": "https://github.com/drasekul/github_actions_exercise#readme",
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "functions": 70,
+        "lines": 70
+      }
+    }
+  },
   "devDependencies": {
     "jest": "^30.3.0"
   }
