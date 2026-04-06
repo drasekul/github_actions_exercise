@@ -10,7 +10,11 @@ function makeRequest(port, path, method = 'GET') {
           body += chunk;
         });
         res.on('end', () =>
-          resolve({ statusCode: res.statusCode, headers: res.headers, body: JSON.parse(body) })
+          resolve({
+            statusCode: res.statusCode,
+            headers: res.headers,
+            body: JSON.parse(body),
+          })
         );
       })
       .on('error', reject)
@@ -71,10 +75,12 @@ describe('HTTP Server', () => {
 describe('start()', () => {
   test('calls server.listen with the given port and logs to console', () => {
     const logSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
-    const listenSpy = jest.spyOn(server, 'listen').mockImplementation((_port, cb) => {
-      cb();
-      return server;
-    });
+    const listenSpy = jest
+      .spyOn(server, 'listen')
+      .mockImplementation((_port, cb) => {
+        cb();
+        return server;
+      });
 
     start(3000);
 
