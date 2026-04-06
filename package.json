@@ -1,0 +1,25 @@
+{
+  "name": "github_actions_exercise",
+  "version": "1.0.0",
+  "description": "This is an exercise to create a pipeline in github actions",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drasekul/github_actions_exercise.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/drasekul/github_actions_exercise/issues"
+  },
+  "homepage": "https://github.com/drasekul/github_actions_exercise#readme",
+  "devDependencies": {
+    "jest": "^30.3.0"
+  }
+}
