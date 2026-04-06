@@ -13,10 +13,14 @@ const server = http.createServer((req, res) => {
   res.end(JSON.stringify({ error: 'Not found' }));
 });
 
-if (require.main === module) {
-  server.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+function start(port) {
+  server.listen(port, () => {
+    console.log(`Server running on port ${port}`);
   });
 }
 
-module.exports = server;
+if (require.main === module) {
+  start(PORT);
+}
+
+module.exports = { server, start };
